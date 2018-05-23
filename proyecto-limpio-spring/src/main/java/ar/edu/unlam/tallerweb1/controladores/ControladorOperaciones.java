@@ -22,11 +22,12 @@ public ModelAndView hacerOperacion(@PathVariable String operacion, @PathVariable
 		
 	    datoOperacion = operacion;
 	
-	    datoOperacion=OperacionErronea.comprobarOperacion(datoOperacion);
+	    
 	    Object resultado = null;
 		ModelMap modelo = new ModelMap();
 		try {
 		
+		datoOperacion=OperacionErronea.comprobarOperacion(datoOperacion);
 		if(datoOperacion.equals("sumar")){
 			resultado=num1+num2;
 		}
@@ -43,15 +44,9 @@ public ModelAndView hacerOperacion(@PathVariable String operacion, @PathVariable
 		if(datoOperacion.equals("multiplicar")){
 			resultado=num1*num2;
 		}
-		if(datoOperacion.equals("error")){
-			
-			
-			modelo.put("error", "no existe la funcion "+operacion );
-			
-			return new ModelAndView("/error", modelo);
-		}
+		
 		 
-		modelo.put("resultado", resultado);
+	    modelo.put("resultado", resultado);
 		modelo.put("num1", num1);
 		modelo.put("num2", num2);
 		modelo.put("operacion", operacion);
@@ -65,10 +60,5 @@ public ModelAndView hacerOperacion(@PathVariable String operacion, @PathVariable
         }
 		
 	}
-
-private Object ExceptionErrorDeOperacion(String datoOperacion2) {
-	// TODO Auto-generated method stub
-	return null;
-}
 }
 

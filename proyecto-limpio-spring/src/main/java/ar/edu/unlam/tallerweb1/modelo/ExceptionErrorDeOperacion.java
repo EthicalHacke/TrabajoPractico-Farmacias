@@ -9,7 +9,7 @@ public class ExceptionErrorDeOperacion extends Exception{
 
 	
 	public ExceptionErrorDeOperacion(String msj) {
-	super("no existe la operacion"+ msj);
+	super("no existe la operacion " + msj);
 	}
 	
 }

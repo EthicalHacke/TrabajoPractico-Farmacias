@@ -1,10 +1,10 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
-public class OperacionErronea{
+public class OperacionErronea {
 
 	
 
-	public static String comprobarOperacion(String operacion) {
+	public static String comprobarOperacion(String operacion)throws ExceptionErrorDeOperacion {
 		
 		if(operacion.equals("sumar")) {
 			return operacion;
@@ -20,8 +20,7 @@ public class OperacionErronea{
 		}
 		
 		else {
-			return operacion="error";
-		}
+			throw new ExceptionErrorDeOperacion(operacion);		}
 			
 	}
 
