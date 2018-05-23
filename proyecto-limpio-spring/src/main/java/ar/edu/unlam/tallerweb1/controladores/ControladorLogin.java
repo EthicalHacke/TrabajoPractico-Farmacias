@@ -30,6 +30,8 @@ public class ControladorLogin {
 		// Se agrega al modelo un objeto del tipo Usuario con key 'usuario' para que el mismo sea asociado
 		// al model attribute del form que esta definido en la vista 'login'
 		Usuario usuario = new Usuario();
+		usuario.setEmail("Escriba su email");
+		usuario.setPassword("Password");
 		modelo.put("usuario", usuario);
 		// Se va a la vista login (el nombre completo de la lista se resuelve utilizando el view resolver definido en el archivo spring-servlet.xml)
 		// y se envian los datos a la misma  dentro del modelo
@@ -68,3 +70,6 @@ public class ControladorLogin {
 		return new ModelAndView("redirect:/login");
 	}
 }
+
+
+
